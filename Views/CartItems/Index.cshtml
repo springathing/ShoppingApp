@@ -1,0 +1,87 @@
+﻿@model IEnumerable<mblyakherShoppingApp.Models.CodeFirst.CartItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    #checkoutdiv {
+        margin-bottom:10px;
+    }
+    #checkoutbutton {
+        padding: 10px;
+        background-color: black;
+        color: whitesmoke;
+        border: none;
+        text-decoration:none;
+    }
+    #checkoutbutton:hover {
+        background-color:yellow;
+        color:black;
+        font-weight:bold;
+        text-decoration:none;
+    }
+</style>
+
+<h2>Cart Items</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Price)
+        </th>
+    </tr>
+    
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Count)
+        </td>
+        <td>
+            @Html.Raw(item.Item.Description)
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.Customer.FullName)
+        </td>
+        <td>
+            @{ 
+                decimal totalPrice = item.Item.Price * item.Count;
+            }
+            $ @totalPrice
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", "Items", new { id = item.Item.Id }, null) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+</table>
+
+@if (ViewBag.CartTotal > 0)
+{
+<div id="checkoutdiv">
+    <a id="checkoutbutton" href="@Url.Action("Create", "Orders")">Proceed To Checkout</a>
+</div>
+}
+
+
+@*Button to OrderController, with anchor tag to Create View
+    db.CartItems.Where(c => c.CustomerId
+    var userId = User.Identity.GetUserId( if == userId).ToList();*@

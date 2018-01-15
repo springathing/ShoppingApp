@@ -1,0 +1,86 @@
+﻿@model mblyakherShoppingApp.Models.CodeFirst.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dd>
+            <img src="@Model.MediaURL" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.MediaURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaURL)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description)
+        </dd>
+
+        </dl>
+
+        <h3>Added to Catalog on: @Model.CreationDate.ToShortDateString()</h3>
+        @if (Model.UpdatedDate.HasValue)
+        {
+            <h5>Last Updated: @Model.UpdatedDate.Value.ToShortDateString()</h5>
+        }
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>*@
+
+    
+</div>
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+        </div>
+        <div>
+            @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+        </div>
+    }
+    @Html.ActionLink("Back to List", "Index")
+</p>

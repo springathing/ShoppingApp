@@ -1,0 +1,61 @@
+﻿@model IEnumerable<mblyakherShoppingApp.Models.CodeFirst.Item>    
+            
+@*Extensiblity - can just add classes without needing to change existing ones
+  Debugging is easier - classes are separate and easy to debug
+  Security - UI is with Views only not with Controllers and Modals, and with objects its hard
+    to append*@
+@*Starts with URL request including server name, controller name, action name and optionally some kind of parameter such as ID
+    for the action, if data is passed it goes to the model and then that information is rendered in the view*@
+            
+<style>
+    #addtocart {
+        width: auto;
+        float: right;
+        border: none;
+        background-color: whitesmoke;
+        color: darkblue;
+    }
+    #addtocart:hover {
+        background-color:black;
+        color:yellow;
+    }
+    #countofitems {
+        padding-left: 35px;
+        color: darkslategray;
+        margin: 5px 0px;
+    }
+    #8items {
+        text-align: left;
+    }
+</style>
+
+                <div id="8items" class="row">
+                    <div id="countofitems">
+                        <p>@Model.Count() items</p>
+                    </div>
+                </div>
+                <div id="img1to4" class="row"> @*looping and displaying html format for each row in SQL table*@
+                @foreach (var item in Model)
+                 {
+                    <div class="col-md-3">
+                        <a href="@Url.Action("Details", new { id=item.Id })"><img src="@Url.Content(item.MediaURL)" class="img-responsive" /></a>
+                        @using (Html.BeginForm("Create", "CartItems", new { itemId = item.Id }, FormMethod.Post))
+                         {
+                            @Html.AntiForgeryToken()
+                            <input id="addtocart" type="submit" class="btn btn-primary" value="Add to Cart" />
+                         }
+                        <h4>@item.Name</h4>
+                        <p>$@item.Price</p>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <span> | </span>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </div>
+                 }
+                </div>
+
+
+                @if (@User.IsInRole("Admin"))
+                 {
+                    <div>
+                        @Html.ActionLink("Create New", "Create") @*provides anchor tag to create new item*@
+                    </div>
+                 }

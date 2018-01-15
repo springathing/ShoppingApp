@@ -1,0 +1,651 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Pro Series Watches</title>
+    <meta charset="utf-8" />
+    <link href="~/Assets/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="shortcut icon" href="~/Assets/Images/shoppingicon.png" type="image/x-icon" />
+    <!--Style Begins-->
+    <style>
+        nav {
+            display: none;
+            position: fixed;
+            margin-left: 50px;
+            width: 275px;
+            height: 750px;
+            margin-top: 10px;
+        }
+
+            nav a {
+                display: block;
+                margin-left: 15px;
+                color: black;
+                text-decoration: none;
+            }
+
+                nav a:hover {
+                    color: black;
+                    text-decoration: none;
+                    background-color: darkgray;
+                }
+
+                nav a:focus {
+                    text-decoration:none;
+                    outline-style:none;
+                }
+
+        #first7links {
+            padding-right: 170px;
+            margin-top: 25px;
+        }
+
+            #first7links a {
+                margin-top: 8px;
+                font-size: 15px;
+            }
+
+        #middleyearlinks {
+            display: none;
+            padding-left: 15px;
+        }
+
+        #last3links {
+            padding-right: 140px;
+            margin-top: 20px;
+        }
+
+            #last3links a {
+                margin-top: 25px;
+                font-size: 24px;
+            }
+
+        #icontimes {
+            float: right;
+            font-size: 20px;
+            padding: 5px;
+        }
+
+            #icontimes:hover {
+                background-color: whitesmoke;
+            }
+
+        #bars {
+            padding-left: 35px;
+        }
+
+        #iconbars {
+            float: left;
+            padding: 5px;
+            font-size: 25px;
+        }
+
+            #iconbars:hover {
+                background-color: whitesmoke;
+            }
+
+        #cartsearch {
+            padding-right: 35px;
+            margin-bottom: 20px;
+        }
+
+        #iconshop {
+            float: right;
+            font-size: 25px;
+        }
+
+        #iconsearch {
+            float: right;
+            font-size: 25px;
+            padding-right: 20px;
+        }
+
+        #iconsearch:hover {
+            cursor:pointer;
+        }
+
+        #searchbar {
+            display:none;
+            margin-right:10px;
+            border:solid 1px black;
+            border-radius:10px;
+            width:200px;
+            height:25px;
+            padding-left:8px;
+            padding-right:8px;
+            font-size:20px;
+            font-family:Calibri;
+        }
+
+        #bigimage {
+            margin-bottom: 10px;
+        }
+
+        #mainimg {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+            #mainimg img {
+                border: 5px solid #808080;
+            }
+
+        #mainwords1 {
+            position: absolute;
+            font-size: 80px;
+            color: white;
+            top: 130px;
+            left: 55px;
+        }
+
+        #mainwords2 {
+            position: absolute;
+            font-size: 50px;
+            color: white;
+            top: 245px;
+            left: 55px;
+        }
+
+        #mainbutton {
+            position: absolute;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 15px;
+            top: 365px;
+            left: 60px;
+            text-decoration:none;
+        }
+
+            #mainbutton:hover {
+                background-color: whitesmoke;
+                color: black;
+                font-weight: bold;
+                text-decoration:none;
+            }
+
+        #img1to4 {
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+            #img1to4 img {
+                border: 5px solid #808080;
+            }
+
+            #img1to4 h4 {
+                text-align: center;
+                margin-top: 10px;
+                font-family: Papyrus;
+            }
+
+            #img1to4 p {
+                text-align: center;
+                font-family: 'Lucida Console';
+            }
+
+
+
+        #img2of4 h5 {
+            background-color: black;
+            color: white;
+            padding: 3px;
+        }
+
+        #img2of4 button {
+            background-color: transparent;
+            color: black;
+            padding: 5px 12px;
+            border: none;
+        }
+
+            #img2of4 button:hover {
+                background-color: whitesmoke;
+                color: black;
+            }
+
+        #img2floatingelements h5 {
+            position: absolute;
+            top: -5px;
+            left: 20px;
+        }
+
+        #img2floatingelements button {
+            position: absolute;
+            top: 125px;
+            left: 75px;
+        }
+
+        #i2button {
+            display: none;
+        }
+
+
+
+        #img5to8 {
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+            #img5to8 img {
+                border: 5px solid #808080;
+            }
+
+            #img5to8 h4 {
+                text-align: center;
+                margin-top: 10px;
+                font-family: Papyrus;
+            }
+
+            #img5to8 p {
+                text-align: center;
+                font-family: 'Lucida Console';
+            }
+
+
+
+        #img7of8 h5 {
+            background-color: black;
+            color: white;
+            padding: 3px;
+        }
+
+        #img7of8 button {
+            background-color: transparent;
+            color: black;
+            padding: 5px 12px;
+            border: none;
+        }
+
+            #img7of8 button:hover {
+                background-color: whitesmoke;
+                color: black;
+            }
+
+        #img7floatingelements h5 {
+            position: absolute;
+            top: -5px;
+            left: 20px;
+        }
+
+        #img7floatingelements button {
+            position: absolute;
+            top: 125px;
+            left: 75px;
+        }
+
+        #i7button {
+            display: none;
+        }
+
+
+        #subscribe {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+            #subscribe input {
+                width: 50%;
+                font-family: Verdana;
+            }
+
+            #subscribe button {
+                background-color: red;
+                color: white;
+                padding: 5px 10px;
+                border-color: black;
+            }
+
+                #subscribe button:hover {
+                    background-color: yellow;
+                    color: black;
+                }
+
+        #contactaboutstore {
+            background-color: whitesmoke;
+        }
+
+        #contact {
+            text-align: center;
+            padding: 30px 0px;
+        }
+
+            #contact input {
+                display: block;
+                margin: auto;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                width: 80%;
+                font-family: Verdana;
+                padding: 5px 0px;
+            }
+
+            #contact button {
+                background-color: black;
+                color: white;
+                padding: 2px 5px 2px 5px;
+                width: 80%;
+                text-align: center;
+                border-color: black;
+            }
+
+                #contact button:hover {
+                    background-color: yellow;
+                    color: black;
+                }
+
+        #about {
+            text-align: center;
+            padding-top: 10px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+            #about a {
+                display: block;
+                text-align: center;
+                margin-top: 5px;
+                font-size: 15px;
+                color: black;
+                text-decoration: none;
+            }
+
+                #about a:hover {
+                    color: darkred;
+                    text-decoration: underline;
+                }
+
+        #store {
+            padding-top: 10px;
+        }
+
+        #footer {
+            background-color: black;
+            height: 75px;
+        }
+
+            #footer p {
+                font-family: 'Courier New';
+                color: white;
+                text-align: center;
+                padding: 27px 0px;
+            }
+
+            #footer a {
+                color: white;
+                text-decoration: none;
+            }
+
+                #footer a:hover {
+                    color: yellow;
+                    text-decoration: none;
+                }
+    </style>
+    <!--Style Ends-->
+
+</head>
+
+<body>
+    <!--Container Begin-->
+    <div class="container-fluid">
+        <!--Full Page Row Begin-->
+        <div class="row">
+            <!--Nav Col Begin-->
+            <div class="col-md-3">
+                <nav id="links">
+                    <div>
+                        <i id="icontimes" class="fa fa-times w3-hover-opacity w3-large"></i>
+                        <h3><b>Pro Series Watches</b></h3>
+                    </div>
+                    <div id="first7links">
+                        <a href="#">FORA Series</a>
+                        <a href="#">TOP Series</a>
+                        <a href="#">Collections <i id="showyears" class="fa fa-caret-down"></i></a>
+                        <div id="middleyearlinks">
+                            <a href="#">2017 <i id="hideyears" class="fa fa-caret-right w3-hover-opacity w3-large"></i></a>
+                            <a href="#">2016</a>
+                            <a href="#">2015</a>
+                            <a href="#">2014</a>
+                        </div>
+                        <a href="#">Straps</a>
+                        <a href="#">Parts</a>
+                        <a href="#">Tools</a>
+                        <a href="#">Accessories</a>
+                    </div>
+                    <div id="last3links">
+                        <a href="#" data-toggle="modal" data-target="#ContactModal">Contact</a>
+                        <a href="#" data-toggle="modal" data-target="#NewsletterModal">Newsletter</a>
+                        <a href="#">Subscribe</a>
+                    </div>
+                </nav>
+            </div>
+            <!--Nav Col End-->
+            <!--Body Content Col Begin-->
+            <div class="col-md-8">
+                <div id="bars" class="row">
+                    <i id="iconbars" class="fa fa-bars w3-hover-opacity w3-large"></i>
+                </div>
+
+                <div id="cartsearch" class="row">                    
+                    <div style="float:right; font-size:25px; padding-left:8px;">
+                        <a href="@Url.Action("Index", "CartItems")"><i id="iconshop" data-toggle="tooltip" data-placement="bottom" title="@ViewBag.CartItems" class="fa fa-shopping-cart w3-hover-opacity w3-large"></i></a>
+                        <i id="iconsearch" class="fa fa-search w3-hover-opacity w3-large"></i>
+                        <input id="searchbar" type="text" placeholder="Search..." />
+                    </div>
+          
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+                <div id="bigimage" class="row">
+                    <div id="mainimg" class="col-md-12">
+                        <img src="~/Assets/Images/3.jpg" class="img-responsive" />
+                    </div>
+                    <div id="bigimgfloatingelements">
+                        <h1 id="mainwords1">New Arrivals</h1>
+                        <h1 id="mainwords2">COLLECTION 2016</h1>
+                        <a href="@Url.Action("Index", "Items")" id="mainbutton">SHOP NOW</a>
+                    </div>
+                </div>
+                @RenderBody()
+                <div id="subscribe" class="row">
+                    <h1>Subscribe</h1>
+                    <p>To get special offers and <span style="color:red">VIP</span> treatment</p>
+                    <input placeholder="Enter e-mail" />
+                    <button>Subscribe</button>
+                </div>
+                <div id="contactaboutstore" class="row">
+                    <div id="contact" class="col-md-4">
+                        <h4>Contact</h4>
+                        <p>Questions? Go Ahead.</p>
+                        <input placeholder="Name" />
+                        <input placeholder="Email" />
+                        <input placeholder="Subject" />
+                        <input placeholder="Message" />
+                        <button>Send</button>
+                    </div>
+                    <div id="about" class="col-md-4">
+                        <h4>About</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">We're Hiring</a>
+                        <a href="#">Support</a>
+                        <a href="#">Find Store</a>
+                        <a href="#">Shipment</a>
+                        <a href="#">Payment</a>
+                        <a href="#">Gift Card</a>
+                        <a href="#">Return</a>
+                        <a href="#">Help</a>
+                    </div>
+                    <div id="store" class="col-md-4">
+                        <h4>Store</h4>
+                        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
+                        <p><i class="fa fa-fw fa-phone"></i> (004) 412-3123</p>
+                        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
+                        <h4>We Accept</h4>
+                        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
+                        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+                        <br />
+                        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+                        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+                        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+                        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+                        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+                        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+                    </div>
+                </div>
+                <div id="footerrow" class="row">
+                    <div id="footer">
+                        <p>Powered by <a href="https://www.coderfoundry.com">CoderFoundry</a> &copy; CoderFoundry</p>
+                    </div>
+                </div>
+                <!--Newsletter Modal Begin-->
+                <div id="NewsletterModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <div class="modal-title">
+                                    <strong>Please Subscribe For Updates & New Releases!</strong>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="well">
+                                            <form id="loginform" method="post">
+                                                <div class="form-group">
+                                                    <label for="username" class="control-label">Username</label>
+                                                    <input type="text" class="form-control" id="username" name="username" placeholder="example@gmail.com" />
+                                                    <span class="help-block"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password" class="control-label">Password</label>
+                                                    <input type="text" class="form-control" id="password" name="password" value="Please enter your password" />
+                                                    <span class="help-block"></span>
+                                                </div>
+                                                <div id="loginErrorMsg" class="alert alert-error hide">
+                                                    Wrong Username or Password. Please try again
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="remember" id="remember" />
+                                                        Remember Login
+                                                    </label>
+                                                    <p class="help-block">(if this is a private computer)</p>
+                                                </div>
+                                                <button type="submit" class="btn btn-success btn-block">Login</button>
+                                                <a href="#" class="btn btn-default btn-block">Help</a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p class="lead">Register now for <span>FREE</span></p>
+                                        <ul class="list-unstyled" style="line-height:2">
+                                            <li><span class="fa fa-check text-success"></span> See all your orders</li>
+                                            <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                                            <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+                                            <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+                                            <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                                            <li><a href="#"> Read more</a></li>
+                                        </ul>
+                                        <p><a href="#" class="btn btn-info btn-block">Yes please, register now!</a></p>
+                                    </div>
+                                </div>
+                                @*<input type="email" placeholder="Enter your email" />*@
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--Newsletter Modal End-->
+                <!--iFrame Contact Modal Begin-->
+                <div class="modal fade in" id="ContactModal" role="dialog" aria-hidden="false">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                                <h4 class="modal-title">Our Contact Information</h4>
+                                <ul>
+                                    <li>Phone Number: (123) 456-7890</li>
+                                    <li>Email: example@gmail.com</li>
+                                    <li>Address: 123 Street Lane City, State 45678</li>
+                                </ul>
+                            </div>
+                            <div class="modal-body">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.863707332568!2d-80.0743593847297!3d36.0968102800995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885307248f53d1df%3A0x53caa774a23eb4bf!2s1231+Shields+Rd+%235%2C+Kernersville%2C+NC+27284!5e0!3m2!1sen!2sus!4v1504107545770" width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--iFrame Contact Modal End-->
+            </div>
+            <!--Body Content Col End-->
+            <!--White Space Col Begin-->
+            <div class="col-md-1">
+
+            </div>
+            <!--White Space Col End-->
+        </div>
+        <!--Full Page Row End-->
+    </div>
+    <!--Container End-->
+
+    <script src="~/Assets/scripts/jquery-1.9.1.js"></script>
+    <script src="~/Assets/scripts/bootstrap.js"></script>
+    <!--Functionality Scripts Begins-->
+    <script>
+        $("#iconbars").click(
+        function navOpen() {
+            document.getElementById("links").style.display = "block";
+        })
+        $("#icontimes").click(
+        function navClose() {
+            document.getElementById("links").style.display = "none";
+        })
+
+        $("#showyears").click(
+        function navOpen() {
+            document.getElementById("middleyearlinks").style.display = "block";
+        })
+        $("#hideyears").click(
+        function navClose() {
+            document.getElementById("middleyearlinks").style.display = "none";
+        })
+
+        $("#iconsearch").click(
+        function searchToggle() {
+            $("#searchbar").fadeToggle(1000);
+        })
+
+        $("#img2").mouseenter(function () {
+            document.getElementById("i2button").style.display = "block";
+        });
+        $("#img2").mouseleave(function () {
+            document.getElementById("i2button").style.display = "none"
+        });
+
+        $("#img7").mouseenter(function () {
+            document.getElementById("i7button").style.display = "block";
+        });
+        $("#img7").mouseleave(function () {
+            document.getElementById("i7button").style.display = "none"
+        });
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+    <!--Functionality Scripts End-->
+
+    @RenderSection("scripts", required:false)
+
+</body>
+
+</html>
